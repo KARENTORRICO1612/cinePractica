@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&family=Raleway:wght@400;600;700;800&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+    </style>
+    
+    <title>CINELANDIA OFICIAL</title> 
+    <link rel="stylesheet" href="/CSS/estilo.css" > 
+
+</head>
+<body>
+    
+
+    <header class="header">
+
+        <div class="menu container">
+
+            <a href="#" class="logo"> CINELANDIA</a>
+        
+        </div>
+    </header>
+
+
+
+    <br>
+
+
+
+
+    <section class="movies container">
+
+        <h2>Peliculas mas vistas</h2>
+        <hr>
+
+        <div class="box-container-1">
+
+            <div class="box-1" id="elementoSeleccionado">
+
+                <div class="content" >
+                    <img id="miImagen"  src="https://static.wixstatic.com/media/58f6c7_989eb075ad654cf48707de7a89092c5b~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_85/tulipan.jfif"  alt="">
+                    <h3>Pelicula hd</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, totam?
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="load-more" id="load-more-1">Cargar mas</div>
+
+    </section>
+    
+
+    
+
+    <!-- CONTENIDO QUE SE MOSTRARA EN EL MODAL AL SELECCIONAR ELEMENTO -->
+    <!-- Modal -->
+    <div id="miModal" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <!-- <p>Aquí puedes colocar el contenido del modal.</p> -->
+
+        
+        <div class="modal-titulo">
+            <h1>Detalle de Película</h1>
+        </div>
+
+      </br>
+
+      <div class="modal-contenido-inner">
+    <form action="/validar" method="post">
+
+        ID:
+        <input type="number" name="cod" id="cod"><br><br>
+
+        Titulo:
+        <input type="text" name="title" id="title"><br><br>
+
+        Duración:
+        <input type="number" name="duracion" id="duracion"><br><br>
+
+        Lenguaje:
+        <input type="text" name="lenguaje" id="lenguaje"><br><br>
+
+        Género:
+        <input type="text" name="genero" id="genero"><br><br>
+
+        Restricción de Edad:
+        <input type="number" name="restriccion" id="restriccion"><br><br>
+
+        Sinopsis:
+        <input type="text" name="sinopsis" id="sinopsis"><br><br>
+
+        Actores:
+        <input type="text" name="actores" id="actores"><br><br>
+
+        Director:
+        <input type="text" name="director" id="director"><br><br>
+
+        Fecha de Lanzamiento:
+        <input type="date" name="fechaL" id="fechaL"><br><br>
+
+        Horario disponible:
+        <input type="time" name="hora" id="hora"><br><br>
+
+        Extra:
+        <input type="text" name="extra" id="extra"><br><br>
+
+
+        <input type="submit" value="Comprar">
+    </form>
+
+
+        <!-- Imagen -->
+        <div class="imagen">
+            <!-- Agrega la imagen que deseas mostrar -->
+            <img src="https://static.wixstatic.com/media/58f6c7_989eb075ad654cf48707de7a89092c5b~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_85/tulipan.jfif" alt="Descripción de la imagen">
+        </div>
+        
+    </div>
+
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+    
+    <footer class="footer container">
+
+        <h3>cinemexican</h3>
+
+        <ul>
+            <li><a href="main.html">HOME</a></li>
+            <li><a href="novedades.html">NOVEDADES</a></li>
+            <li><a href="descuentos.html">DESCUENTOS</a></li>
+        </ul>
+
+    </footer>
+    
+    <script src="/JS/funcionalidad.js"> </script>
+    
+</body>
+</html>

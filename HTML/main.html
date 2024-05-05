@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&family=Raleway:wght@400;600;700;800&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+    </style>
+    
+    <title>CINELANDIA OFICIAL</title> 
+    <link rel="stylesheet" href="/CSS/estilo.css" > 
+
+</head>
+<body>
+    
+
+    <header class="header">
+
+        <div class="menu container">
+
+            <a href="#" class="logo"> CINELANDIA</a>
+        
+        </div>
+    </header>
+
+
+
+    <br>
+
+
+
+
+    <section class="movies container">
+
+        <h2>Peliculas mas vistas</h2>
+        <hr>
+
+        <div class="box-container-1">
+
+            <div class="box-1" id="elementoSeleccionado">
+
+                <div class="content" >
+                    <img id="miImagen"  src="https://img.freepik.com/foto-gratis/primer-disparo-flor-morada_181624-25863.jpg"  alt="">
+                    <h3>Titulo</h3>
+
+                    <p>
+                        Duración:
+                     </p>
+                     <p>
+                        Lengugaje:
+                     </p>
+                     <p>
+                        Género:
+                     </p>
+                     <p>
+                        Restricción de Edad:
+                     </p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="box-container-1">
+
+            <div class="box-1" id="elementoSeleccionado">
+
+                <div class="content" >
+                    <img id="miImagen"  src="https://www.verdissimo.com/wp-content/uploads/2023/08/Verdissimo_flores_bonitas_CONT_07.jpg"  alt="">
+                    <h3>Titulo</h3>
+
+                    <p>
+                        Duración:
+                     </p>
+                     <p>
+                        Lengugaje:
+                     </p>
+                     <p>
+                        Género:
+                     </p>
+                     <p>
+                        Restricción de Edad:
+                     </p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+            <div class="load-more" id="load-more-1">Cargar mas</div>
+
+    </section>
+    
+
+    
+
+    <!-- CONTENIDO QUE SE MOSTRARA EN EL MODAL AL SELECCIONAR ELEMENTO -->
+    <!-- Modal -->
+    <div id="miModal" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <!-- <p>Aqui puedes colocar el contenido del modal.</p> -->
+        
+        <div>
+            <div class="modal-titulo">
+                <h1>Detalle de Película</h1>
+            </div>
+
+            <div class="modal-contenido-inner">
+                <form action="/validar" method="post">
+                    <div class="form-layout">
+                        <div>
+                            <label>ID:</label>
+                            <input type="number" name="cod" id="cod">
+                        </div>
+                        
+                        <div>
+                            <label>Titulo:</label>
+                            <input type="text" name="title" id="title">
+                        </div>
+                        
+                        
+                        <div>
+                            <label>Duración:</label>
+                            <input type="number" name="duracion" id="duracion">
+                        </div>
+                        
+                        <div>
+                            <label>Lenguaje:</label>
+                            <input type="text" name="lenguaje" id="lenguaje">
+                        </div>
+                        
+                        <div>
+                            <label>Género:</label>
+                            <input type="text" name="genero" id="genero">
+                        </div>
+                        
+                        <div>
+                            <label>Restricción de Edad:</label>
+                            <input type="number" name="restriccion" id="restriccion">
+                        </div>
+                        
+                        <div>
+                            <label>Sinopsis:</label>
+                            <input type="text" name="sinopsis" id="sinopsis">
+                        </div>
+                        
+                        <div>
+                            <label>Actores:</label>
+                            <input type="text" name="actores" id="actores">
+                        </div>
+                        
+                        <div>
+                            <label>Director:</label>
+                            <input type="text" name="director" id="director">
+                        </div>
+                        
+                        <div>
+                            <label>Fecha de Lanzamiento:</label>
+                            <input type="date" name="fechaL" id="fechaL">
+                        </div>
+                        
+                        <div>
+                            <label>Horario disponible:</label>
+                            <input type="text" name="extra" id="extra">
+                        </div>
+                    </div>
+                    
+                     <input type="submit" value="Comprar">
+                     <button id="mostrarBtn">Mostrar Confirmación</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Imagen del modal -->
+        <div class="imagen-modal">
+            <!-- Agrega la imagen que deseas mostrar -->
+            <label><img id="img-modal" src="https://img.freepik.com/foto-gratis/primer-disparo-flor-morada_181624-25863.jpg" alt="Descripción de la imagen"></label>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+    
+    <footer class="footer container">
+
+        <h3>cinemexican</h3>
+
+        <ul>
+            <li><a href="main.html">HOME</a></li>
+            <li><a href="novedades.html">NOVEDADES</a></li>
+            <li><a href="descuentos.html">DESCUENTOS</a></li>
+        </ul>
+
+    </footer>
+    
+    <script src="/JS/funcionalidad.js"> </script>
+    
+</body>
+</html>

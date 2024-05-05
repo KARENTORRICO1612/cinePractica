@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/estilo.css" > 
+    <title>Pelicula</title>
+
+
+    <style>
+        .bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+
+body{
+    background-color: #030303;
+    color: #ffffff;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header{
+    background-image: url(/images/bg\ \(1\).jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+}
+
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 35px;
+    color: #ffffff;
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a{
+    font-size: 22px;
+    padding: 20px;
+    color: #ffffff;
+    display: block;
+}
+
+.menu .navbar ul li a:hover{
+    color: #ff2f28;
+}
+
+#menu{
+    display: none;
+}
+
+.menu-icono{
+    width: 25px;
+}
+
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+
+.header-content{
+    display: flex;
+    width: 100%;
+}
+
+.header-1 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-self: flex-end;
+}
+
+.header-1 img{
+    width: 300px;
+}
+
+
+
+.movies{
+    padding: 50px 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+hr{
+    border: 1px solid #ff2f28;
+    width: 50%;
+    margin-bottom: 40px;
+}
+
+box-container-1, 
+.box-container-2,
+.box-container-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 40px;
+}
+
+.box-1,
+.box-2,
+.box-3  {
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+}
+
+.box-1:nth-child(1),
+.box-1:nth-child(2),
+.box-1:nth-child(3),
+.box-1:nth-child(4) {
+    display: inline-block;
+}
+
+.box-2:nth-child(1),
+.box-2:nth-child(2),
+.box-2:nth-child(3),
+.box-2:nth-child(4) {
+    display: inline-block;
+}
+
+
+.box-3:nth-child(1),
+.box-3:nth-child(2),
+.box-3:nth-child(3),
+.box-3:nth-child(4) {
+    display: inline-block;
+}
+
+.load-more {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 15px;
+    border: 1px solid #ff2f28;
+    color: #ff2f28;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.load-more:hover{
+    background-color: #ff2f28;
+    color: #ffffff;
+}
+
+.content img {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.content h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.content {
+    color: #CFCFCF;
+    font-size: 20px;
+
+}
+
+
+
+
+
+
+
+
+/* Estilos para el modal */
+
+.modal-titulo {
+    margin-bottom: 20px; /* Agrega espacio entre el título y el formulario */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-contenido {
+    position: relative;
+    background-color: #0500008e;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* display: flex;    Permite el posicionamiento de loos elementos que se desea */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+     gap: 24px; /* Espaciado entre elementos de la grilla */
+  }
+
+  .modal-contenido p {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    color: #000;
+  }
+
+  .form-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .cerrar {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .cerrar:hover,
+  .cerrar:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+
+  /* Contenedor */
+  .imagen-modal {
+    width: 100%;
+    max-width: 100%;
+    /* max-width: 100%; Establece el ancho máximo de la imagen */
+    /* height: auto; Hace que la altura se ajuste automáticamente para mantener la proporción */
+    /* margin-left: 20px;  Ajusta el margen izquierdo para separar la imagen del formulario */
+    /* margin-bottom: 20px;  Ajusta el margen inferior para dar espacio entre la imagen y el contenido debajo */
+}
+
+/* Aplicar a la image */
+.imagen-modal img {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+.modal-contenido-inner {
+    display: flex;
+}
+
+/* Vista movil */
+@media screen and (max-width: 768px){
+    .modal-contenido {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 0;
+    align-items: center;
+    margin-top: 100px;
+    border-top: 1px solid #ff2f283d;
+}
+
+
+.footer ul{
+    display: flex;
+
+}
+
+.footer h3{
+    font-size: 30px;
+    color: #030303;
+}
+
+.footer a{
+    color: #ffffff;
+    font-size: 20px;
+    margin-right: 20px;
+    display: block;
+}
+
+.footer a:hover{
+    color: #ff2f28;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:991px) {
+    .menu {
+        /* display: initial; */
+        padding: 20px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #03030380;
+        display: none;
+    }
+
+    .menu .navbar ul li{
+        width: 100%;
+    }
+
+    .btn-1{
+        display: none;
+    }
+
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+
+    .header-content {
+        flex-direction: column;
+        padding: 180px 30px 30px 30px;
+    }
+
+    .header-1 {
+        width: 100%;
+        align-items: center;
+    }
+
+    .header-1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .movies{
+        padding: 30px;
+    }
+
+    .footer{
+        margin-top: 30px;
+        padding: 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer ul{
+        margin-top: 15px;
+        justify-content: center;
+
+    }
+}
+
+    </style>
+
+</head>
+<body>
+    
+
+    <h1>Detalle de Pelicula</h1>
+
+    <form action="/validar" method="post">
+
+        ID:
+        <input type="number" name="cod" id="cod"><br><br>
+
+        Titulo:
+        <input type="text" name="title" id="title"><br><br>
+
+        Duración:
+        <input type="number" name="duracion" id="duracion"><br><br>
+
+        Lenguaje:
+        <input type="text" name="lenguaje" id="lenguaje"><br><br>
+
+        Género:
+        <input type="text" name="genero" id="genero"><br><br>
+
+        Restricción de Edad:
+        <input type="number" name="restriccion" id="restriccion"><br><br>
+
+        Sinopsis:
+        <input type="text" name="sinopsis" id="sinopsis"><br><br>
+
+        Actores:
+        <input type="text" name="actores" id="actores"><br><br>
+
+        Director:
+        <input type="text" name="director" id="director"><br><br>
+
+        Fecha de Lanzamiento:
+        <input type="date" name="fechaL" id="fechaL"><br><br>
+
+        Horario disponible:
+        <input type="time" name="hora" id="hora"><br><br>
+
+        Extra:
+        <input type="text" name="extra" id="extra"><br><br>
+
+
+        <input type="submit" value="Comprar">
+    </form>
+</body>
+</html>
